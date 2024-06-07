@@ -35,4 +35,15 @@ async function getToken() {
 	}
 }
 
-getToken();
+async function main() {
+	while (true) {
+		getToken();
+		await sleep(10000);
+	}
+}
+
+main();
+
+function sleep(ms) {
+	return new Promise(resolve => setTimeout(resolve, ms));
+}
